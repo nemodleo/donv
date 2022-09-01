@@ -1,13 +1,14 @@
 from setuptools import setup, find_packages
 
-version = '0.0.2'
+version = '0.0.3'
 
 setup(
     name="donv",
     version=version,
     packages=find_packages(),
     description="Easy setup for docker env.",
-    keywords='alert slack cli',
+    keywords='docker build dockerfile run env images ps',
+    long_description_content_type="text/markdown",
     long_description=open("README.md").read(),
     package_data={'donv': ['donv']},
     url="https://github.com/nemodleo/donv",

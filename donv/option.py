@@ -1,3 +1,4 @@
+import os
 import argparse
 from pathlib import Path
 from glob import glob
@@ -19,9 +20,18 @@ class Options:
                             help='docker name')
         parser.add_argument('-r', '--rm', action='store_true',
                             help='docker --rm option')
+        parser.add_argument('-f', '--dockerfile', default=None, type=str,
+                            help='docker file')
         self.opt = parser.parse_args()
         self.opt.workspace_docker = f'/{Path(self.opt.workspace).stem}'
         self.opt.datas = glob('/data*/')
+        if self.opt.dockerfile is None:
+            try:
+                import donv
+                donv_dir = os.path.dirname(donv.__file__)
+                self.opt.dockerfile = os.path.join(donv_dir, 'docker', 'Dockerfile')
+            except:
+                self.opt.dockerfileDockerfile
 
     def get_option(self):
         """get_option

@@ -4,11 +4,11 @@ from .base import Docker_Base
 class Docker_Build(Docker_Base):
     def __init__(self, opt):
         super(Docker_Build, self).__init__(opt)
-        self.format = 'docker build -t {} --build-arg passwd="$(cat /etc/passwd)" -f ./docker/Dockerfile .'
+        self.format = 'docker build -t {} --build-arg passwd="$(cat /etc/passwd)" -f {} .'
         self.set_cmd()
 
     def set_cmd(self):
-        self.format = self.format.format(self.opt.image)
+        self.format = self.format.format(self.opt.image, self.opt.dockerfile)
 
 def main():
     opt = option.Options().get_option()

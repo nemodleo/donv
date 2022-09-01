@@ -4,7 +4,7 @@ Easy setup for docker env.
 ## How to install
 
 ```
-pip install docker-env
+pip install donv
 ```
 
 ## How to donv use
@@ -17,14 +17,20 @@ pip install docker-env
     ```
     donvi
     ```
+    ```
+    donvi --help
+    ```
 
 1. Docker Build
 
     ```
-    donv-build
+    donv-build --dockerfile ./donvdonv/Dockerfile --image donv/donv:0.0.1
     ```
     ```
     donvb
+    ```
+    ```
+    donvb --help
     ```
 
 2. Docker Run
@@ -34,6 +40,9 @@ pip install docker-env
     ```
     ```
     donvr -g 0,1,2,3,4,5,6,7 -n noname -r
+    ```
+    ```
+    donvr --help
     ```
 
 ## How to build package.
