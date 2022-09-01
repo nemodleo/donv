@@ -1,5 +1,5 @@
 import os
-import option
+from . import option
 
 class Docker_Base:
     def __init__(self, opt):
