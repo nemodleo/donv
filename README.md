@@ -45,7 +45,7 @@ pip install donv
     donvr --help
     ```
 
-## How to build package.
+## How to build package
 
 ```
 python setup.py bdist_wheel && pip install -e .
