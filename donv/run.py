@@ -4,10 +4,10 @@ from .base import Docker_Base
 class Docker_Run(Docker_Base):
     def __init__(self, opt):
         super(Docker_Run, self).__init__(opt)
-        self.format = 'docker run -it'
         self.set_cmd()
 
     def set_cmd(self):
+        self.format = 'docker run -it'
         self.add_option(f"""--gpus '"{f'device={self.opt.gpus}'}"'""", ' \\')
         self.add_option('--ipc=host --ulimit memlock=-1 --ulimit stack=67108864', ' \\')
         self.add_option(f'--name {self.opt.name}', ' \\')

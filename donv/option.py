@@ -1,3 +1,4 @@
+import sys
 import os
 import argparse
 from pathlib import Path
@@ -6,7 +7,13 @@ from glob import glob
 class Options:
     """Argument for Docker-ENV.
     """
-    def __init__(self):
+    def __init__(self, key=None):
+        if key is None:
+            self.all_option()
+        elif key == 'name':
+            self.name_option()
+
+    def all_option(self):
         parser = argparse.ArgumentParser()
         parser.add_argument('-g', '--gpus', default='all', type=str,
                             help='[ all | 0 | 0,1,2,3,4 ]')
@@ -32,6 +39,11 @@ class Options:
                 self.opt.dockerfile = os.path.join(donv_dir, 'docker', 'Dockerfile')
             except:
                 self.opt.dockerfileDockerfile
+    
+    def name_option(self):
+        parser = argparse.ArgumentParser()
+        self.opt = parser.parse_args()
+        self.opt.name = 'noname' if len(sys.argv)!=2 else sys.argv[1]
 
     def get_option(self):
         """get_option

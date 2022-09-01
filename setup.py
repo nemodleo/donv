@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = '0.0.4'
+version = '0.1.0'
 
 setup(
     name="donv",
@@ -25,9 +25,19 @@ setup(
             "donv-info = donv.base:main",
             "donv-run = donv.run:main",
             "donv-build = donv.build:main",
+            "donv-restart = donv.restart:main",
+            "donv-attach = donv.attach:main",
+            "donv-restart-attach = donv.restart_attach:main",
+            "donv-stop = donv.stop:main",
+            "donv-remove = donv.remove:main",
             "donvi = donv.base:main",
             "donvr = donv.run:main",
-            "donvb = donv.build:main"
+            "donvb = donv.build:main",
+            "donvrst = donv.restart:main",
+            "donva = donv.attach:main",
+            "donvra = donv.restart_attach:main",
+            "donvs = donv.stop:main",
+            "donvrm = donv.remove:main",
         ],
     },
     classifiers=[
