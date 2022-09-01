@@ -3,6 +3,8 @@ Easy setup for docker env.
 
 ## How to install
 
+https://pypi.org/project/donv/
+
 ```
 pip install donv
 ```
