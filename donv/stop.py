@@ -7,7 +7,7 @@ class Docker_Stop(Docker_Base):
         self.set_cmd()
 
     def set_cmd(self):
-        self.format = f'docker stop {self.opt.name}'
+        self.add_option(f'docker stop {self.opt.name}')
 
 def main():
     opt = option.Options('name').get_option()

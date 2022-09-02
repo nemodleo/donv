@@ -7,7 +7,12 @@ class Docker_Build(Docker_Base):
         self.set_cmd()
 
     def set_cmd(self):
-        self.format = f'docker build -t {self.opt.image} --build-arg passwd="$(cat /etc/passwd)" -f {self.opt.dockerfile} .'
+        self.add_option('docker build')
+        self.add_option(f'-t {self.opt.image}', ' \\')
+        self.add_option(f'--build-arg passwd="$(cat /etc/passwd)"', ' \\')
+        self.add_option(f'--build-arg requirements="$(cat {self.opt.requirements})"', ' \\')
+        self.add_option(f'--build-arg dockerfilesh="$(cat {self.opt.dockerfilesh})"', ' \\')
+        self.add_option(f'-f {self.opt.dockerfile} .', ' \\')
 
 def main():
     opt = option.Options().get_option()

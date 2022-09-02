@@ -7,7 +7,7 @@ class Docker_Restart_Attach(Docker_Base):
         self.set_cmd()
 
     def set_cmd(self):
-        self.format = f'docker restart {self.opt.name}'
+        self.add_option(f'docker restart {self.opt.name}')
         self.add_option(f'docker attach {self.opt.name}', ';')
 
 def main():

@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
-
-version = '0.1.2'
+from donv import version
+version = version.VERSION
 
 setup(
     name="donv",

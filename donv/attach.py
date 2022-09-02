@@ -7,7 +7,7 @@ class Docker_Attach(Docker_Base):
         self.set_cmd()
 
     def set_cmd(self):
-        self.format = f'docker attach {self.opt.name}'
+        self.add_option(f'docker attach {self.opt.name}')
 
 def main():
     opt = option.Options('name').get_option()

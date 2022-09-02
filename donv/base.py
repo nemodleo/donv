@@ -1,14 +1,21 @@
 import os
 from . import option
+from . import version
+
+
 
 class Docker_Base:
     def __init__(self, opt):
         super(Docker_Base, self).__init__()
         self.opt = opt
-        self.format = 'echo [DOCKER INFO]'
+        self.init_cmd()
         self.set_cmd()
 
+    def init_cmd(self):
+        self.format = f''
+
     def set_cmd(self):
+        self.add_option('echo [DOCKER INFO]')
         self.add_option('echo')
         self.add_option('echo [IMAGE]')
         self.add_option('docker images')
@@ -27,9 +34,12 @@ class Docker_Base:
             print('[!] wrong command')
 
     def print_cmd(self):
-        print('[CMD]-----------------------------------')
-        print(self.format)
-        print('----------------------------------------')
+        LINE = '--------------------------------------------------------------------------------'
+        print(LINE)
+        print(version.DONV.format(version.VERSION))
+        print(LINE)
+        print(self.format.strip())
+        print(LINE)
 
     @property
     def cmd(self):

@@ -21,7 +21,7 @@ class Options:
                             help='server workspace - code')
         parser.add_argument('-p', '--port', default=None, type=int,
                             help='port number')
-        parser.add_argument('-i', '--image', default='lionrocket/lr_vision:0.9.6', type=str,
+        parser.add_argument('-i', '--image', default='lionrocket/lr_vision:0.9.7', type=str,
                             help='docker image')
         parser.add_argument('-n', '--name', default='noname', type=str,
                             help='docker name')
@@ -35,8 +35,11 @@ class Options:
         if self.opt.dockerfile is None:
             try:
                 import donv
-                donv_dir = os.path.dirname(donv.__file__)
-                self.opt.dockerfile = os.path.join(donv_dir, 'docker', 'Dockerfile')
+                self.opt.donv_dir = os.path.dirname(donv.__file__)
+                self.opt.donv_docker_dir = os.path.join(self.opt.donv_dir, 'docker')
+                self.opt.dockerfile = os.path.join(self.opt.donv_docker_dir, 'Dockerfile')
+                self.opt.requirements = os.path.join(self.opt.donv_docker_dir, 'requirements.txt')
+                self.opt.dockerfilesh = os.path.join(self.opt.donv_docker_dir, 'dockerfile.sh')
             except:
                 self.opt.dockerfile = 'Dockerfile'
     
