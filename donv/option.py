@@ -38,12 +38,11 @@ class Options:
                 donv_dir = os.path.dirname(donv.__file__)
                 self.opt.dockerfile = os.path.join(donv_dir, 'docker', 'Dockerfile')
             except:
-                self.opt.dockerfileDockerfile
+                self.opt.dockerfile = 'Dockerfile'
     
     def name_option(self):
-        parser = argparse.ArgumentParser()
-        self.opt = parser.parse_args()
-        self.opt.name = 'noname' if len(sys.argv)!=2 else sys.argv[1]
+        self.opt = argparse.Namespace()
+        self.opt.name = sys.argv[1] if len(sys.argv)==2 else 'noname'
 
     def get_option(self):
         """get_option

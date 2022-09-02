@@ -3,6 +3,8 @@ Easy setup for docker env.
 
 ## How to install
 
+https://pypi.org/project/donv/
+
 ```
 pip install donv
 ```
@@ -84,7 +86,7 @@ pip install donv
     donvr noname 
     ```
 
-## How to build package.
+## How to build package
 
 ```
 python setup.py bdist_wheel && pip install -e .
