@@ -9,7 +9,6 @@ class Docker_Base:
         super(Docker_Base, self).__init__()
         self.opt = opt
         self.init_cmd()
-        self.set_cmd()
 
     def init_cmd(self):
         self.format = f''
@@ -31,15 +30,23 @@ class Docker_Base:
         try:
             os.system(self.format)
         except:
+            self.print_line()
             print('[!] wrong command')
+        self.print_line(line='=')
 
     def print_cmd(self):
-        LINE = '--------------------------------------------------------------------------------'
-        print(LINE)
+        self.print_line(line='=')
         print(version.DONV.format(version.VERSION))
-        print(LINE)
+        self.print_line('[CMD]')
         print(self.format.strip())
-        print(LINE)
+        self.print_line('[LOG]')
+
+    def print_line(self, label: str = '', num: int = os.get_terminal_size().columns, line: str = '-', direciton='r'):
+        just = {
+            'r': label.rjust,
+            'l': label.ljust,
+        }
+        print(just[direciton](num,line))
 
     @property
     def cmd(self):
@@ -48,6 +55,7 @@ class Docker_Base:
 def main():
     opt = option.Options().get_option()
     docker = Docker_Base(opt)
+    docker.set_cmd()
     docker.print_cmd()
     docker.do_cmd()
 
