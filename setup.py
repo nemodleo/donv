@@ -22,6 +22,7 @@ setup(
     script=["donv"],
     entry_points={
         "console_scripts": [
+            "donv = donv.donv:main",
             "donv-info = donv.base:main",
             "donv-run = donv.run:main",
             "donv-build = donv.build:main",

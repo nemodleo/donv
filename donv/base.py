@@ -2,8 +2,6 @@ import os
 from . import option
 from . import version
 
-
-
 class Docker_Base:
     def __init__(self, opt):
         super(Docker_Base, self).__init__()
