@@ -1,3 +1,4 @@
+import os
 from . import option
 from .base import Docker_Base
 
@@ -7,7 +8,7 @@ class Donv(Docker_Base):
         self.set_cmd()
 
     def set_cmd(self):
-        self.add_option('cat README.md')
+        self.add_option(f"cat {os.path.join(self.opt.donv_dir, 'USAGE.md')}")
 
 def main():
     opt = option.Options().get_option()
