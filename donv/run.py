@@ -9,7 +9,7 @@ class Docker_Run(Docker_Base):
     def set_cmd(self):
         self.add_option('docker run -it')
         self.add_option(f"""--gpus '"{f'device={self.opt.gpus}'}"'""", ' \\')
-        self.add_option('--ipc=host --ulimit memlock=-1 --ulimit stack=67108864', ' \\')
+        self.add_option('--ipc=host --ulimit memlock=-1 --ulimit stack=-1', ' \\')
         self.add_option(f'--name {self.opt.name}', ' \\')
         if self.opt.rm:
             self.add_option('--rm', ' \\')
