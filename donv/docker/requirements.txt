@@ -18,3 +18,5 @@ kornia
 nvitop 
 tictectoc 
 alert2me
+ffmpeg-python
+moviepy

@@ -4,6 +4,8 @@ import argparse
 from pathlib import Path
 from glob import glob
 
+from . import version
+
 class Options:
     """Argument for Docker-ENV.
     """
@@ -21,7 +23,7 @@ class Options:
                             help='server workspace - code')
         parser.add_argument('-p', '--port', default=None, type=int,
                             help='port number')
-        parser.add_argument('-i', '--image', default='lionrocket/lr_vision:0.9.7', type=str,
+        parser.add_argument('-i', '--image', default=f'lionrocket/lr_vision:{version.IMG_VERSION}', type=str,
                             help='docker image')
         parser.add_argument('-n', '--name', default='noname', type=str,
                             help='docker name')

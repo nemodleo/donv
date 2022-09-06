@@ -7,12 +7,16 @@ class Docker_Build(Docker_Base):
         self.set_cmd()
 
     def set_cmd(self):
+        self.add_option('mkdir tmp4028')
+        self.add_option('cd tmp4028')
         self.add_option('docker build')
         self.add_option(f'-t {self.opt.image}', ' \\')
         self.add_option(f'--build-arg passwd="$(cat /etc/passwd)"', ' \\')
         self.add_option(f'--build-arg requirements="$(cat {self.opt.requirements})"', ' \\')
         self.add_option(f'--build-arg dockerfilesh="$(cat {self.opt.dockerfilesh})"', ' \\')
         self.add_option(f'-f {self.opt.dockerfile} .', ' \\')
+        self.add_option('cd -')
+        self.add_option('rm -r tmp4028')
 
 def main():
     opt = option.Options().get_option()
