@@ -4,7 +4,7 @@ FROM nvcr.io/nvidia/pytorch:${PYTORCH_VERSION}-py3
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
-    apt-get install -y sudo tree python3-pip libgl1-mesa-glx
+    apt-get install -y sudo tree python3-pip libgl1-mesa-glx ffmpeg
     
 RUN rm -rf /opt/conda/lib/python3.8/site-packages/cv2
 

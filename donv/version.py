@@ -6,5 +6,5 @@ DONV = '''\
  \__,_|\___/|_| |_|\_/  v{}
 '''
 
-VERSION='0.1.8'
-IMG_VERSION='0.9.8'
+VERSION='0.1.9'
+IMG_VERSION='0.9.9'
