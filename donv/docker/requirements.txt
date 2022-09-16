@@ -20,3 +20,8 @@ tictectoc
 alert2me
 ffmpeg-python
 moviepy
+timm==0.4.12
+yacs
+termcolor
+wandb
+

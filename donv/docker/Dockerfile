@@ -25,7 +25,6 @@ RUN /app/dockerfile.sh "$passwd"
 
 RUN chmod -R 775 /var/lib
 
-RUN mkdir -p /Lion/LR_VISION
 WORKDIR /Lion
 RUN mkdir /data
 
