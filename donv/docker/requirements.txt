@@ -24,4 +24,7 @@ timm==0.4.12
 yacs
 termcolor
 wandb
-
+dlib 
+faiss-gpu==1.7.2
+hydra
+hydra-core
