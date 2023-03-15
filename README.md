@@ -47,7 +47,7 @@ pip install donv
     donv-restart noname 
     ```
     ```
-    donvrst noname 
+    donvre noname 
     ```
 
 4. Docker attach
@@ -83,7 +83,16 @@ pip install donv
     donv-remove noname 
     ```
     ```
-    donvr noname 
+    donvrm noname 
+    ```
+
+7. Docker remove image
+
+    ```
+    donv-remove-image noname 
+    ```
+    ```
+    donvrmi noname 
     ```
 
 ## How to build package

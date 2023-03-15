@@ -5,6 +5,9 @@ FROM nvcr.io/nvidia/pytorch:${PYTORCH_VERSION}-py3
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get install -y sudo tree python3-pip libgl1-mesa-glx ffmpeg
+
+RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh
+RUN apt-get install -y git-lfs
     
 RUN rm -rf /opt/conda/lib/python3.8/site-packages/cv2
 
