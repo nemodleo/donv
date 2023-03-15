@@ -36,3 +36,4 @@ line_profiler
 einops
 decord
 xformers
+triton

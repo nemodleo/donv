@@ -86,7 +86,7 @@ pip install donv
     donvrm noname 
     ```
 
-7. Docker remove image
+8. Docker remove image
 
     ```
     donv-remove-image noname 

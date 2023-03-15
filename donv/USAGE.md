@@ -36,7 +36,7 @@
     donv-restart noname 
     ```
     ```
-    donvrst noname 
+    donvre noname 
     ```
 
 4. Docker attach
@@ -72,5 +72,14 @@
     donv-remove noname 
     ```
     ```
-    donvr noname 
+    donvrm noname 
+    ```
+
+8. Docker remove image
+
+    ```
+    donv-remove-image noname 
+    ```
+    ```
+    donvrmi noname 
     ```
