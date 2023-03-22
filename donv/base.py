@@ -23,6 +23,11 @@ class Docker_Base:
     def add_option(self, arg: str, parser=''):
         self.format += f'{parser}\n'
         self.format += arg
+    
+    def add_remain_option(self, parser=''):
+        for arg in self.opt.remain_opt:
+            self.format += f'{parser}\n'
+            self.format += arg
 
     def do_cmd(self):
         try:
@@ -32,10 +37,17 @@ class Docker_Base:
             print('[!] wrong command')
         self.print_line(line='=')
 
+    def clean_format(self, parser='\\'):
+        for f in self.format.split(';'):
+            if f.count(parser + '\n') == 1:
+                f_replace = f.replace(parser + '\n', '')
+                self.format = self.format.replace(f, f_replace)
+
     def print_cmd(self):
         self.print_line(line='=')
         print(version.DONV.format(version.VERSION))
         self.print_line('[CMD]')
+        self.clean_format()
         print(self.format.strip())
         self.print_line('[LOG]')
 

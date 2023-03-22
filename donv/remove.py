@@ -7,10 +7,12 @@ class Docker_Remove(Docker_Base):
         self.set_cmd()
 
     def set_cmd(self):
-        self.add_option(f'docker rm {self.opt.name}')
+        self.add_option(f'docker rm')
+        self.add_remain_option(' \\')  
+        self.add_option(f'{self.opt.name}', ' \\')
 
 def main():
-    opt = option.Options('name').get_option()
+    opt = option.Options().get_option()
     docker = Docker_Remove(opt)
     docker.print_cmd()
     docker.do_cmd()

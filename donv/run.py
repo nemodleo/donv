@@ -19,6 +19,7 @@ class Docker_Run(Docker_Base):
             self.add_option(f'-v {data}:{data}', ' \\')
         if self.opt.port:
             self.add_option(f'-p {self.opt.port}:{self.opt.port}', ' \\')
+        self.add_remain_option(' \\')
         self.add_option(f'{self.opt.image}', ' \\')
 
 def main():

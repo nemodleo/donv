@@ -26,7 +26,7 @@ pip install donv
 1. Docker Build
 
     ```
-    donv-build --dockerfile ./donvdonv/Dockerfile --image donv/donv:0.0.1
+    donv-build --dockerfile ./donvdonv/Dockerfile --image donv/donv:{version}
     ```
     ```
     donvb
@@ -39,6 +39,12 @@ pip install donv
     ```
     ```
     donvr -g 0,1,2,3,4,5,6,7 -n noname -r
+    ```
+    ```
+    donvr noname -r -bla bla:bla
+    ```
+    ```
+    donvr noname -r
     ```
 
 3. Docker restart

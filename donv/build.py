@@ -14,6 +14,7 @@ class Docker_Build(Docker_Base):
         self.add_option(f'--build-arg passwd="$(cat /etc/passwd)"', ' \\')
         self.add_option(f'--build-arg requirements="$(cat {self.opt.requirements})"', ' \\')
         self.add_option(f'--build-arg dockerfilesh="$(cat {self.opt.dockerfilesh})"', ' \\')
+        self.add_remain_option(' \\')
         self.add_option(f'-f {self.opt.dockerfile} .', ' \\')
         self.add_option('cd -')
         self.add_option('rm -r tmp4028')
