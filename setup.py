@@ -16,7 +16,6 @@ setup(
     author_email='nemod.leo@snu.ac.kr',
     license='MIT',
     install_requires=[
-        'python_version >= "3.5"',
     ],
     include_package_data=True,
     script=["donv"],
