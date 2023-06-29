@@ -18,6 +18,7 @@ RUN echo "$requirements"
 RUN echo "$requirements" > /app/requirements.txt
 RUN pip install -r /app/requirements.txt --no-cache-dir
 RUN pip install pillow --upgrade --no-cache-dir
+RUN conda install -c pytorch -c nvidia faiss-gpu=1.7.4 mkl=2021
 
 ARG dockerfilesh
 RUN echo "$dockerfilesh"
