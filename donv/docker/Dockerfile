@@ -18,6 +18,10 @@ RUN echo "$requirements"
 RUN echo "$requirements" > /app/requirements.txt
 RUN pip install -r /app/requirements.txt --no-cache-dir
 RUN pip install pillow --upgrade --no-cache-dir
+RUN mim install mmengine
+RUN mim install "mmcv>=2.0.1"
+RUN mim install "mmdet>=3.1.0"
+RUN mim install "mmpose>=1.1.0"
 RUN conda install -c pytorch -c nvidia faiss-gpu=1.7.4 mkl=2021
 
 ARG dockerfilesh

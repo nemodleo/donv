@@ -1,8 +1,8 @@
 omegaconf 
 h5py 
 pytorch_lightning 
-onnxruntime-gpu==1.8.0
-insightface==0.2.1 
+onnxruntime-gpu
+insightface
 scikit-image 
 opencv-contrib-python
 dominate 
@@ -20,16 +20,16 @@ tictectoc
 alert2me
 ffmpeg-python
 moviepy
-timm==0.4.12
+timm
 yacs
 termcolor
 wandb
 dlib 
-# faiss-gpu==1.7.2
+faiss-gpu
 hydra
 hydra-core
 gradio 
-diffusers[torch]==0.11.1
+diffusers[torch]
 transformers 
 accelerate
 line_profiler
@@ -38,3 +38,8 @@ decord
 xformers
 triton
 natsort
+python-fire
+elasticsearch
+boto3
+redis
+openmim
